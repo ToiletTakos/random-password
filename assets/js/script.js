@@ -16,16 +16,13 @@ var generatePassword = function() {
   var passwordLength = window.prompt("Please enter the desired password length with a minimum of '8' and maximum of '128'.");
   // password number is within the requested paramiters
   if (passwordLength >= 8 && passwordLength <= 128){
-    selections();
+    console.log(passwordLength);
   }
   // user entered a number outside the parameters and is asked to re enter
   else {
     window.alert("Sorry you need to provide a valid answer please try again.");
     return generatePassword();
   }
-}
-
-var selections = function() {
   // Selectors for user to pick for their password
   window.alert("You will be give 4 options, you must select at least one.")
   var lettersLower = window.confirm("Do you want your password to have 'Lower case' characters? Ok for yes, Cancel for no" );
@@ -53,7 +50,7 @@ var selections = function() {
   else if (lettersLower === true && lettersCapital === true) {
     characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   }
-  else if (lettersLower === true && lnumbers === true) {
+  else if (lettersLower === true && numbers === true) {
     characters = 'abcdefghijklmnopqrstuvwxyz1234567890';
   }
   else if (lettersLower === true && symbols === true) {
@@ -81,12 +78,17 @@ var selections = function() {
     characters = ' !"#$%&()*+,-./:;<>=?@[]\^_`{}|~';
   }
   // nothing is picked so the user is alerted and sent back to restart the selection process
-  else if (lettersLower === false && lettersCapital === false && numbers === false && Symbols === false){
+  else if (lettersLower === false && lettersCapital === false && numbers === false && symbols === false){
     window.alert("You didnt select any of the options, please try again.")
-    return selections();
+    return generatePassword();
   }
 
-  console.log(characters);
+  var testing = "";
+  for (var i = 0; i < passwordLength; i++){
+    testing += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  
+  return testing;
 }
 
 // Add event listener to generate button
