@@ -17,4 +17,9 @@ pages link: https://toilettakos.github.io/random-password/
 
 
 ## screenshots of work
-![password generator initial](./assets/images/initial-promp.png)
+![password generator initial](./assets/images/initial-prompt.png)
+![user confirm](./assets/images/user-confirms.png)
+![generated password](./assets/images/generated-password.png)
+![code snap shot 1](./assets/images/first-part-of-code.png)
+![code snap shot 2](./assets/images/second-part-of-code.png)
+
