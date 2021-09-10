@@ -83,11 +83,14 @@ var generatePassword = function() {
     return generatePassword();
   }
 
+  // loop to generate the password
   var testing = "";
   for (var i = 0; i < passwordLength; i++){
+    //empty testing variable is having the character variable have an item selected at the round down value of the random number generated in the length of the characters variable
     testing += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   
+  //return the value to print on screen
   return testing;
 }
 
